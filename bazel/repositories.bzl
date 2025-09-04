@@ -60,6 +60,20 @@ def proxy_wasm_cpp_host_repositories():
 
     maybe(
         http_archive,
+        name = "envoy",
+        sha256 = "bdd9d646b30a3d048f1ff6b2719f81b9e14c0e187950ea8f4812bf5207f42bfc",
+        strip_prefix = "envoy-1.35.1",
+        url = "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.35.1.tar.gz",
+    )
+    maybe(
+        http_archive,
+        name = "bazel_toolchains",
+        sha256 = "02e4f3744f1ce3f6e711e261fd322916ddd18cccd38026352f7a4c0351dbda19",
+        strip_prefix = "bazel-toolchains-5.1.2",
+        url = "https://github.com/bazelbuild/bazel-toolchains/archive/v5.1.2.tar.gz",
+    )
+    maybe(
+        http_archive,
         name = "envoy_toolshed",
         sha256 = "e2252e46e64417d5cedd9f1eb34a622bce5e13b43837e5fe051c83066b0a400b",
         strip_prefix = "toolshed-bazel-bins-v0.1.13/bazel",
